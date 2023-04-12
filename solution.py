@@ -7,5 +7,5 @@ chat_id = 225497605 # Ваш chat ID, не меняйте название пе�
 
 def solution(x: np.array, y: np.array) -> bool:
     alpha = 0.07
-    stat, p_value = stats.ttest_ind(x, y)
+    stat, p_value = ks_2samp(x, y)
     return ( p_value < alpha)
