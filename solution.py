@@ -5,7 +5,6 @@ from scipy import stats
 
 chat_id = 225497605 # Ваш chat ID, не меняйте название переменной
 
-def solution(x: np.array, y: np.array) -> bool:
+def solution2(x: np.array, y: np.array) -> bool:
     alpha = 0.07
-    stat, p_value = stats.ks_2samp(x, y, alternative='two-sided')
-    return (p_value < alpha)
+    return (stats.anderson_ksamp([x, y]).significance_level < alpha)
